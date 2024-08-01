@@ -9,7 +9,7 @@ on:
 
 jobs:
   Continuous_Integration:   #job 이름
-    runs-on: ubuntu-latest  #job을 실행할 환경
+    runs-on: ubuntu-latest   #job을 실행할 환경
     steps:
 
     - uses: actions/checkout@v4 # uses=액션들. 이미 만들어진 액션을 검색해서 가져다 쓰면된다. 해당 레포에 접근 권한이 있다면 레포를 가져올것.
