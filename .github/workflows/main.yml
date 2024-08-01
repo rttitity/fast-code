@@ -52,7 +52,7 @@ jobs:
       with:
         repository: rttitity/deployment #본인에 맞게 수정
         ref: main  # branch
-        token: ${{ secrets.GH_TOKEN }}
+        token: ${{ secrets.GH_TOCKEN }}
 
     - name: k8s manifest update
       run: |
