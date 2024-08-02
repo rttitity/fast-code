@@ -31,7 +31,7 @@ pipeline {
                 sh "docker build -t ${DOCKERHUB}:latest ."
                 // currentBuild.number 젠킨스가 제공하는 빌드넘버 변수
                 // oolralra/fast:<빌드넘버> 와 같은 이미지가 만들어질 예정.
-                
+               
             }
             post {
                 failure {
@@ -59,7 +59,7 @@ pipeline {
                 success {
                     sh "docker image rm -f ${DOCKERHUB}:${currentBuild.number}"
                     sh "docker image rm -f ${DOCKERHUB}:latest"
-                    sh "echo push failed"
+                    sh "echo push success"
                     // 성공하든 실패하든 로컬에 있는 도커이미지는 삭제
                 }
             }
@@ -87,19 +87,4 @@ pipeline {
                 }
             }
         }
-        stage('start5') {
-            steps {
-                sh "echo hello jenkins!!!"
-            }
-            post {
-                failure {
-                    sh "echo failed"
-                }
-                success {
-                    sh "echo success"
-                }
-            }
-        }
-
-    }
 }
