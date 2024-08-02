@@ -2,9 +2,17 @@ pipeline {
     agent any
    
     stages {
-        stage ('start'){
+        stage('start') {
             steps {
-                sh "hello jenkins"
+                sh "echo hello jenkins!!!"
+            }
+            post {
+                failure {
+                    sh "echo failed"
+                }
+                success {
+                    sh "echo success"
+                }
             }
         }
     }
